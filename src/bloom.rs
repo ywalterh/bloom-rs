@@ -52,7 +52,7 @@ use super::hashing::HashIter;
 /// filter.contains(&2); /* false */
 /// ```
 pub struct BloomFilter<R = RandomState, S = RandomState> {
-    bits: BitVec,
+    pub bits: BitVec,
     num_hashes: u32,
     hash_builder_one: R,
     hash_builder_two: S,
