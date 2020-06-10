@@ -190,7 +190,7 @@ impl Intersectable for BloomFilter {
     /// # Panics
     /// Panics if the BloomFilters are not using the same number of bits
     fn intersect(&mut self, other: &BloomFilter) -> bool {
-        self.bits.intersect(&other.bits)
+        self.bits.and(&other.bits)
     }
 }
 
@@ -205,7 +205,7 @@ impl Unionable for BloomFilter {
     /// # Panics
     /// Panics if the BloomFilters are not using the same number of bits
     fn union(&mut self, other: &BloomFilter) -> bool {
-        self.bits.union(&other.bits)
+        self.bits.or(&other.bits)
     }
 }
 
